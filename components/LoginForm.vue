@@ -18,7 +18,7 @@ const password = ref('')
       <span class="text-end mr-10 text-slate-700">Password</span>
       <el-input v-model="password" type="password" />
     </div>
-    <el-button type="primary" @click="$emit('submit', {email, password})">
+    <el-button :disabled="loading" type="primary" @click="$emit('submit', {email, password})">
       <img v-if="loading" class="w-4 mr-1" src="loading.svg" alt="">
       <span>Login</span>
     </el-button>
