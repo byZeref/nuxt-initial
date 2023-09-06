@@ -23,7 +23,7 @@ const view = id => target.value = id
       <div class="mr-2 font-bold">{{ slug }}</div>
       <span>| {{ title }}</span>
       <NuxtLink :to="`/posts/${id}`" @click="view(id)" class="py-1 px-4 ml-2 bg-emerald-500">
-        <span :id="id" v-if="target === id">Loading...</span>
+        <img :id="id" v-if="target === id" src="loading.svg" alt="">
         <span v-else>Ver</span>
       </NuxtLink>
     </div>

@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
+    '@element-plus/nuxt',
     // "@nuxtjs/eslint-module",
   ],
   devtools: { enabled: true },
