@@ -13,8 +13,10 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "element-plus": "^2.3.12",
-    "eslint": "^8.48.0",
     "nuxt": "^3.7.0",
     "sass": "^1.66.1"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.11"
   }
 }

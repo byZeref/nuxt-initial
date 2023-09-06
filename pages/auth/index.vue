@@ -1,11 +1,15 @@
 <script setup>
+import { useUserStore } from '@/stores/user'
+import { storeToRefs } from 'pinia'
 
+const userStore = useUserStore()
+// const { token, logged } = storeToRefs(userStore)
 const { LOGIN } = config
 const email = ref('')
 const password = ref('')
 const loading = ref(false)
-const token = ref('')
 const error = ref('Please check your internet connection')
+
 
 const login = async () => {
   const payload = {
@@ -21,8 +25,8 @@ const login = async () => {
       const { status, _data: data } = response
       if (status !== 200) return;
       console.log('response ok', response);
-      token.value = data.token
-      console.log(token.value)
+      const token = data.token
+      userStore.login(token)
       clearForm()
       notify('success')
     },
