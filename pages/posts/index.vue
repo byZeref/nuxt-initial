@@ -1,7 +1,12 @@
 <script setup>
-
+import { useUserStore } from '@/stores/user'
+const userStore = useUserStore()
 const { ENDPOINT } = config
-// useFetch() blocks navigation until promise is resolved
+
+/**
+ * useFetch()
+ * bloquea la navegacion hasta resolver
+ */
 const { data: posts } = await useFetch('/posts', {
   baseURL: ENDPOINT,
   method: 'get',

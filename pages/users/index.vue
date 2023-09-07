@@ -1,17 +1,27 @@
 <script setup>
 const { ENDPOINT } = config
-// useLazyFetch() DO NOT blocks navigation until promise is resolved
-const { data: users } = await useLazyFetch('/users', {
+/**
+ * useLazyFetch()
+ * no bloquea la navegacion | permite manejar 'pending' mientras resuleve
+ */
+const { data: users, pending } = await useLazyFetch('/users', {
   baseURL: ENDPOINT
 })
 
+/**
+ * useAsyncData()
+ * con 'await' - funciona como useFetch() | bloquea la navegacion hasta resolver
+ * sin 'await' - no bloquea la navegacion | permite manejar 'pending' mientras resuleve
+ */
+// const { data: users, pending, error } = useAsyncData('users', () => $fetch(`${ENDPOINT}/users`))
 </script>
 
 <template>
   <div>
     <span class="text-3xl">Users</span>
     <div class="flex flex-col">
-      <div class="flex my-1" v-for="{ id, firstname, lastname, email } in users" :key="id">
+      <div v-if="pending">Loading...</div>
+      <div v-else class="flex my-1" v-for="{ id, firstname, lastname, email } in users" :key="id">
         <div><b>{{ firstname + ' ' + lastname }}</b> | {{ email }}</div>
       </div>
     </div>
