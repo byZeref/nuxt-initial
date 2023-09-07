@@ -1,6 +1,7 @@
 <script setup>
 
 const { ENDPOINT } = config
+// useFetch() blocks navigation until promise is resolved
 const { data: posts } = await useFetch('/posts', {
   baseURL: ENDPOINT,
   method: 'get',

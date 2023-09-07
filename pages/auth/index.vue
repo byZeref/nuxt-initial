@@ -31,14 +31,15 @@ const login = async (payload) => {
       error.value = 'Please check your internet connection'
       loginNotify('error', error.value)
     },
-    onResponseError({ request, response, options }) {
+    async onResponseError({ request, response, options }) {
       const { status, _data: data } = response
       console.log('error with status', status)
       // intercepta el error para reenviar la peticion con un email valido
       // simulacion de JWT (refresh token)
       if (status === 400 && _retry.value) {
         _retry.value = false
-        return getValidUser()
+        const newData = await checkToken()
+        if (newData) return login(newData)
       }
       error.value = data.error
       loginNotify('error', error.value)
@@ -48,22 +49,7 @@ const login = async (payload) => {
 }
 
 
-/**
- * Obtiene un email valido para el login
- */
-const getValidUser = async () => {
-  await useFetch('/api/users?page=1', {
-    baseURL: LOGIN,
-    method: 'get',
-    onResponse({ response }) {
-      const { _data: data } = response
-      const arr = [...data.data]
-      const email = arr.find(el => el.id === 4).email
-      return login({ email, password: 'cityslicka' })
-    },
-  })
-}
-
+onMounted(() => userStore.logged && navigateTo('/'))
 </script>
 
 <template>
