@@ -1,7 +1,13 @@
 <template>
-  <NavBar />
+  <header>
+    <NavBar />
+  </header>
+  
   <main>
     <slot />
   </main>
-  <Footer class="footer" />
+
+  <footer>
+    <Footer class="footer" />
+  </footer>
 </template>

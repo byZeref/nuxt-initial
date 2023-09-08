@@ -21,9 +21,13 @@ const { data: users, pending } = await useLazyFetch('/users', {
     <span class="text-3xl">Users</span>
     <div class="flex flex-col">
       <div v-if="pending">Loading...</div>
-      <div v-else class="flex my-1" v-for="{ id, firstname, lastname, email } in users" :key="id">
-        <div><b>{{ firstname + ' ' + lastname }}</b> | {{ email }}</div>
-      </div>
+      <Transition name="fade">
+        <div v-if="!pending">
+          <div class="flex my-1" v-for="{ id, firstname, lastname, email } in users" :key="id">
+            <div><b>{{ firstname + ' ' + lastname }}</b> | {{ email }}</div>
+          </div>
+        </div>
+      </Transition>
     </div>
   </div>
 </template>

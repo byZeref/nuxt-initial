@@ -13,5 +13,6 @@ onBeforeMount(() => userStore.loadLocalData())
 </template>
 
 <style lang="scss">
-@use "~/assets/styles.scss";
+@use "~/assets/main.scss";
+@use "~/assets/transitions.scss";
 </style>
