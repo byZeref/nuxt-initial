@@ -54,8 +54,7 @@ onMounted(() => userStore.logged && navigateTo('/'))
 
 <template>
   <div class="flex justify-center items-center min-h-[100vh]">
-    <div class="flex flex-col justify-center w-[50vw] bg-slate-300 min-h-[500px] p-10 rounded-md">
-      <h2 class="text-xl text-slate-600 mb-10 text-center">Enter your credentials</h2>
+    <div class="flex w-[80vw] md:w-[50vw] bg-slate-300 min-h-[500px] px-4 md:px-10 rounded-md">
       <LoginForm :loading="loading" @submit="login" />
     </div>
   </div>

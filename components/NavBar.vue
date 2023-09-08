@@ -1,24 +1,32 @@
 <script setup>
 import { useUserStore } from "@/stores/user"
-import { storeToRefs } from "pinia"
 const userStore = useUserStore()
-const { logged } = storeToRefs(userStore)
 
+const active = computed(() => {
+  const id = route.name
+  const el = document.getElementById(id)
+
+})
 const logout = () => {
   return userStore.logout()
 }
 </script>
 
 <template>
-  <div class="w-full h-20 bg-slate-500 flex justify-end">
-    <NuxtLink to="/" class="p-2 flex items-center justify-center min-w-[100px]">Home</NuxtLink>
-    <NuxtLink to="/posts" class="p-2 flex items-center justify-center min-w-[100px]">Posts</NuxtLink>
-    <NuxtLink to="/users" class="p-2 flex items-center justify-center min-w-[100px]">Users</NuxtLink>
-    <NuxtLink to="#" @click="logout" class="p-2 flex items-center justify-center min-w-[100px]">Logout</NuxtLink>
-    <!-- <NuxtLink v-if="!logged" to="/auth" class="p-2 flex items-center justify-center min-w-[100px]">Login</NuxtLink> -->
+  <div class="w-full h-20 bg-slate-200 border-b-2 border-slate-500 flex justify-end">
+    <NuxtLink id="index" to="/" class="router-link p-2 flex items-center justify-center min-w-[100px]">Home</NuxtLink>
+    <NuxtLink id="posts" to="/posts" class="router-link p-2 flex items-center justify-center min-w-[100px]">Posts</NuxtLink>
+    <NuxtLink id="users" to="/users" class="router-link p-2 flex items-center justify-center min-w-[100px]">Users</NuxtLink>
+    <NuxtLink to="/auth" @click="logout" class="router-link p-2 flex items-center justify-center min-w-[100px]">Logout</NuxtLink>
   </div>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.router-link {
+  color: #475569;
+  font-weight: bold;
+  &-active, &:hover {
+    color: #c2410c;
+  }
+}
 </style>

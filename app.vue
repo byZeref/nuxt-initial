@@ -7,7 +7,7 @@ onBeforeMount(() => userStore.loadLocalData())
 <template>
   <!-- <Loading v-if="userStore.loading" /> -->
   <NuxtLayout>
-      <NuxtLoadingIndicator color="#10b981" />
+      <NuxtLoadingIndicator color="#ea580c" />
       <NuxtPage />
   </NuxtLayout>
 </template>
