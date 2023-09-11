@@ -32,5 +32,8 @@ export const useUserStore = defineStore('user', () => {
     return navigateTo('/auth')
   }
 
+  // funciona con ssr: false - en true da error al acceder al api del client side (localStorage)
+  loadLocalData()
+  
   return { email, token, logged, login, logout, loadLocalData, loading }
 })

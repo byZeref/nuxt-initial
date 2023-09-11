@@ -6,6 +6,7 @@ const { ENDPOINT } = config
 /**
  * useFetch()
  * bloquea la navegacion hasta resolver
+ * { refresh } - refresh() - vuelve a realizar la peticion
  */
 const { data: posts } = await useFetch('/posts', {
   baseURL: ENDPOINT,

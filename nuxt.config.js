@@ -10,4 +10,5 @@ export default defineNuxtConfig({
     pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
   },
   devtools: { enabled: true },
+  ssr: false,
 })

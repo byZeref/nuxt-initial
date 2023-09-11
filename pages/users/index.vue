@@ -2,7 +2,7 @@
 const { ENDPOINT } = config
 /**
  * useLazyFetch()
- * no bloquea la navegacion | permite manejar 'pending' mientras resuleve
+ * no bloquea la navegacion | permite manejar 'pending' mientras resuelve
  */
 const { data: users, pending } = await useLazyFetch('/users', {
   baseURL: ENDPOINT
@@ -11,9 +11,10 @@ const { data: users, pending } = await useLazyFetch('/users', {
 /**
  * useAsyncData()
  * con 'await' - funciona como useFetch() | bloquea la navegacion hasta resolver
- * sin 'await' - no bloquea la navegacion | permite manejar 'pending' mientras resuleve
+ * sin 'await' - no bloquea la navegacion | permite manejar 'pending' mientras resuelve
+ * refreshNuxtData('users_key') - vuelve a realizar la peticion | permite manejar 'pending' mientras resuelve
  */
-// const { data: users, pending, error } = useAsyncData('users', () => $fetch(`${ENDPOINT}/users`))
+// const { data: users, pending, error } = useAsyncData('users_key', () => $fetch(`${ENDPOINT}/users`))
 </script>
 
 <template>
