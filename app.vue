@@ -1,6 +1,8 @@
 <script setup>
 import { useUserStore } from '@/stores/user'
 const userStore = useUserStore()
+const { $hello } = useNuxtApp() // plugin
+$hello('hello')
 onBeforeMount(() => userStore.loadLocalData())
 </script>
 

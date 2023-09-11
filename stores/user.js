@@ -28,6 +28,7 @@ export const useUserStore = defineStore('user', () => {
     email.value = ''
     logged.value = false
     localStorage.removeItem('auth')
+    localStorage.removeItem('notified')
     return navigateTo('/auth')
   }
 

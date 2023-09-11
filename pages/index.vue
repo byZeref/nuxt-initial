@@ -1,8 +1,15 @@
 <script setup>
 const show = ref(false)
 const mounted = ref(false)
+const notified = computed(() => localStorage.getItem('notified'))
 
-onMounted(() => mounted.value = true)
+onMounted(() => {
+  mounted.value = true
+  if (!notified.value) {
+    loginNotify('success')
+    localStorage.setItem('notified', 1)
+  }
+})
 </script>
 
 <template>
