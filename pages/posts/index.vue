@@ -35,7 +35,7 @@ const title = ref('Posts Page')
       <div class="mr-2 font-bold">{{ slug }}</div>
       <span>| {{ title }}</span>
       <NuxtLink :to="`/posts/${id}`" @click="view(id)" class="py-1 px-4 ml-2 min-h-[32px] flex items-center bg-orange-500">
-        <img :id="id" v-if="target === id" src="loading.svg" alt="">
+        <img :id="id" v-if="target === id" src="~/public/loading.svg" alt="">
         <span v-else>Ver</span>
       </NuxtLink>
     </div>

@@ -24,7 +24,7 @@ const password = ref('')
         <el-input class="col-span-2" v-model="password" type="password" />
       </div>
       <el-button :disabled="loading" type="warning" @click="$emit('submit', {email, password})">
-        <img v-if="loading" class="w-4 mr-1" src="loading.svg" alt="">
+        <img v-if="loading" class="w-4 mr-1" src="~/public/loading.svg" alt="">
         <span>Login</span>
       </el-button>
     </el-form>
