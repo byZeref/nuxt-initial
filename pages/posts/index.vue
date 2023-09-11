@@ -18,9 +18,17 @@ const { data: posts } = await useFetch('/posts', {
 
 const target = ref()
 const view = id => target.value = id
+
+const title = ref('Posts Page')
 </script>
 
 <template>
+  <!-- SEO solo para esta page -->
+  <Head>
+    <Title>{{ title }}</Title>
+    <Meta name="description" :content="`This is the all ${title}`" />
+  </Head>
+
   <div class="text-3xl mb-5">Posts</div>
   <div class="flex flex-col gap-2">
     <div class="flex" v-for="{ id, slug, title } in posts" :key="id">

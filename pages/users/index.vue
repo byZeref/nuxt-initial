@@ -1,4 +1,12 @@
 <script setup>
+// SEO solo para esta page
+useHead({
+  title: 'Users Page',
+  meta: [
+    { name: 'description', content: 'This is the all users page.' }
+  ],
+})
+
 const { ENDPOINT } = config
 /**
  * useLazyFetch()
