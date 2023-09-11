@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     // "@nuxtjs/eslint-module",
   ],
+  css: ["@/assets/main.scss"],
   alias: {
     pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
   },

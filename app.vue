@@ -16,6 +16,6 @@ $hello('hello')
 </template>
 
 <style lang="scss">
-@use "~/assets/main.scss";
+// @use "~/assets/main.scss";
 @use "~/assets/transitions.scss";
 </style>
