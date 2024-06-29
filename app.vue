@@ -5,7 +5,7 @@ const { $hello } = useNuxtApp() // plugin
 $hello('hello')
 
 // necesario si ssr: true
-// onBeforeMount(() => userStore.loadLocalData())
+onBeforeMount(() => userStore.loadLocalData())
 </script>
 
 <template>

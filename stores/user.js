@@ -33,7 +33,7 @@ export const useUserStore = defineStore('user', () => {
   }
 
   // funciona con ssr: false - en true da error al acceder al api del client side (localStorage)
-  loadLocalData()
+  // loadLocalData()
   
   return { email, token, logged, login, logout, loadLocalData, loading }
 })
