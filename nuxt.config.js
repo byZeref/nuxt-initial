@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Simple project for learning nuxt 3' },
         { property: 'og:title', content: 'Learning Nuxt 3!' },
         { property: 'og:description', content: 'Simple project for learning nuxt 3' },
-        { property: 'og:image', content: '~/public/blob.svg' },
+        { property: 'og:image', content: 'blob.svg' },
       ],
     },
   },
