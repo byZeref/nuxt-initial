@@ -15,10 +15,10 @@ export default defineNuxtConfig({
     head: {
       title: 'Learning Nuxt 3!',
       meta: [
-        {
-          name: 'description',
-          content: 'Simple project for learning nuxt 3'
-        }
+        { name: 'description', content: 'Simple project for learning nuxt 3' },
+        { property: 'og:title', content: 'Learning Nuxt 3!' },
+        { property: 'og:description', content: 'Simple project for learning nuxt 3' },
+        { property: 'og:image', content: '~/public/blob.svg' },
       ],
     },
   },
